@@ -16,8 +16,8 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <!--<div id="unity-warning"> </div>
-      <div id="unity-footer">
+      <div id="unity-warning"> </div>
+      <!--<div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Las</div>
@@ -29,7 +29,8 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       //var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      //var warningBanner = document.querySelector("#unity-warning");
+
+      var warningBanner = document.querySelector("#unity-warning");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -37,6 +38,7 @@
       // Modify or remove this function to customize the visually presented
       // way that non-critical warnings and error messages are presented to the
       // user.
+
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -89,7 +91,8 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+        //unityShowBanner('WebGL builds are not supported on mobile devices.');
+
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -105,7 +108,8 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          loadingBar.style.display = "none";
+            loadingBar.style.display = "none";
+
         //  fullscreenButton.onclick = () => {
         //    unityInstance.SetFullscreen(1);
         //  };
